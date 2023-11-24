@@ -2,6 +2,9 @@ import React, { Fragment } from "react";
 
 import { gql, useQuery } from "@apollo/client";
 
+import Spinner from "./core/Spinner";
+import Alert from "./core/Alert";
+
 const GET_CHARACTERS = gql`
   query {
     characters {
@@ -17,9 +20,13 @@ const GET_CHARACTERS = gql`
 const CharactersList = () => {
   const { data, loading, error } = useQuery(GET_CHARACTERS);
 
+  if (loading) return <Spinner />;
+
+  if (error) return <Alert />;
+
   return (
     <Fragment>
-      <h1 className="text-center mb-4">Rick and Morty GraphQL</h1>
+      <h1 className="text-center my-4">Rick and Morty GraphQL</h1>
       {data?.characters?.results?.map((item) => {
         return (
           <div className="col-4 mb-4" key={item.id}>

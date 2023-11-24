@@ -6,6 +6,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./scss/style.scss";
 
 const apolloClient = new ApolloClient({
   uri: process.env.REACT_APP_GRAPHQL_URI,
