@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
 import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 import Spinner from "./core/Spinner";
 import Alert from "./core/Alert";
@@ -34,9 +35,9 @@ const CharactersList = () => {
               <img className="card-img-top" src={item.image} alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
+                <Link to={`/details/${item.id}`} className="btn btn-primary">
+                  Details
+                </Link>
               </div>
             </div>
           </div>
