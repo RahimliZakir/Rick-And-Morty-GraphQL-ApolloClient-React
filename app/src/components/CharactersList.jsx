@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { useGraphQL } from "../hooks/useGraphQL";
 
-import LoadingErrorWrapper from "./core/LoadingErrorWrapper";
+import LoadingErrorWrapper from "./shared/LoadingErrorWrapper";
 
 const CharactersList = () => {
   const graphQl = useGraphQL();

@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client";
 
 import { useGraphQL } from "../hooks/useGraphQL";
 
-import LoadingErrorWrapper from "./core/LoadingErrorWrapper";
+import LoadingErrorWrapper from "./shared/LoadingErrorWrapper";
 
 const CharacterDetails = () => {
   const params = useParams();
