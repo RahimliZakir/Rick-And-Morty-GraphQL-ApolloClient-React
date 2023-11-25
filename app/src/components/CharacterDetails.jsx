@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { useGraphQL } from "../hooks/useGraphQL";
@@ -20,11 +20,11 @@ const CharacterDetails = () => {
 
   return (
     <LoadingErrorWrapper loading={loading} error={error}>
-      <div className="d-flex vh-100 justify-content-center align-items-center">
+      <div className="vh-100 d-flex justify-content-center align-items-center">
         <div>
           <img src={data?.character?.image} alt="Character" />
         </div>
-        <div>
+        <div className="ms-3">
           <h3>{data?.character?.name}</h3>
           {data?.character?.episode.slice(0, 10).map((item) => {
             return (
@@ -33,6 +33,9 @@ const CharacterDetails = () => {
               </p>
             );
           })}
+          <Link to="/" className="mt-3 btn btn-danger">
+            Go back
+          </Link>
         </div>
       </div>
     </LoadingErrorWrapper>
