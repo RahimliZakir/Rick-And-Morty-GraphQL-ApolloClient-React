@@ -28,8 +28,20 @@ export const useGraphQL = () => {
     }
   `;
 
+  const SEARCH_LOCATIONS = gql`
+    query searchLocations($name: String!) {
+      locations(filter: { name: $name }) {
+        results {
+          id
+          name
+        }
+      }
+    }
+  `;
+
   return {
     GET_CHARACTERS,
     GET_CHARACTER_DETAILS,
+    SEARCH_LOCATIONS,
   };
 };

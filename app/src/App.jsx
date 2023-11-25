@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import CharactersList from "./components/CharactersList";
 import CharacterDetails from "./components/CharacterDetails";
+import SearchLocations from "./components/SearchLocations";
 
 const App = () => {
   //* React Router DOM v.6.4
@@ -13,6 +14,10 @@ const App = () => {
     {
       path: "details/:id",
       element: <CharacterDetails />,
+    },
+    {
+      path: "locations",
+      element: <SearchLocations />,
     },
   ]);
 
