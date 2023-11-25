@@ -19,10 +19,8 @@ const App = () => {
   return (
     <div className="App">
       <div className="container">
-        <div className="row">
-          {/* React Router DOM v.6.4 */}
-          <RouterProvider router={router} />
-        </div>
+        {/* React Router DOM v.6.4 */}
+        <RouterProvider router={router} />
       </div>
     </div>
   );
